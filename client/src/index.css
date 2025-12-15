@@ -1,0 +1,865 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #171837 0, #050715 50%, #02030b 100%);
+    color: #f5f6ff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, sans-serif;
+}
+
+.page {
+    padding: 2rem;
+    padding-top: calc(2rem + 64px);
+}
+
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem 2.5rem 0.4rem 2.5rem;
+    background: linear-gradient(90deg, #050715 0%, #141637 40%, #050715 100%);
+    color: #f5f6ff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.nav h1 {
+    font-size: 3rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.nav2 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding-left: 30px;
+
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.75));
+}
+
+/* Botón toggle para móviles */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid rgba(148, 163, 184, 0.8);
+    border-radius: 999px;
+    color: #f5f6ff;
+    padding: 0.3rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.nav a {
+    color: #f5f6ff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    transition: background-color 0.18s ease-out,
+        color 0.18s ease-out, transform 0.18s ease-out;
+}
+
+.nav a:hover {
+    background-color: rgba(91, 141, 255, 0.2);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.videojuego-h1 {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin: 1.5rem 0 0.75rem;
+    color: #f5f6ff;
+    text-decoration-line: underline;
+    text-decoration-color: #5b8dff;
+    text-decoration-thickness: 3px;
+}
+
+.section-title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 1.5rem 0 0.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #a5a7c7;
+    font-size: 0.95rem;
+}
+
+.home {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.home-hero {
+    position: relative;
+    margin: 0 0 0.5rem;
+}
+
+.home-hero-text {
+    max-width: 520px;
+    text-align: center;
+    margin: 0 auto 2rem;
+    padding: 1.5rem 2rem;
+}
+
+.home-title {
+    font-size: 2rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+}
+
+.home-subtitle {
+    color: #a5a7c7;
+    font-size: 0.95rem;
+    margin-bottom: 1.4rem;
+}
+
+.home-hero-image-wrapper {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.home-hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 720px;
+    object-fit: cover;
+    object-position: top center;
+    margin-top: -90px;
+}
+
+.home-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn-primary,
+.btn-outline {
+    padding: 0.6rem 1.4rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform var(--transition-fast),
+        box-shadow var(--transition-fast), filter var(--transition-fast),
+        background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: #ffffff;
+    border: 1px solid transparent;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.85);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.7);
+    transform: translateY(-2px);
+}
+
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.6rem;
+}
+
+.home-card {
+    background: linear-gradient(145deg, #0f1023 0%, #171837 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+    padding: 1.2rem 1.3rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out,
+        border-color 0.25s ease-out;
+}
+
+.home-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.7);
+}
+
+.home-card h2 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.home-card p {
+    margin: 0.2rem 0 0.4rem;
+    font-size: 0.9rem;
+    color: #a5a7c7;
+}
+
+.home-card-link {
+    margin-top: auto;
+    font-size: 0.88rem;
+    color: #5b8dff;
+    text-decoration: none;
+}
+
+.home-card-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        padding: 0.3rem 1.25rem;
+    }
+
+    .logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav2 {
+        position: absolute;
+        top: 150px;
+        right: 0;
+        left: 0;
+        margin: 0;
+        padding: 0.75rem 1.25rem 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        background: rgba(5, 7, 21, 0.98);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.7);
+        display: none;
+    }
+
+    .nav2.nav2--open {
+        display: flex;
+    }
+
+    .nav2 li {
+        width: 100%;
+    }
+
+    .nav2 a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-cta {
+        flex-direction: column;
+    }
+
+    .home-hero-text {
+        margin-top: -4rem;
+        padding: 1.25rem 1rem;
+        max-width: 90%;
+    }
+
+    .home-hero-image {
+        max-height: 320px;
+    }
+}
+/* para crear juegos nuevos - modal
+Formulario de agregar nuevo videogame!
+y editar game.*/
+
+/* Estilo al primer div
+lo que hace es que ocupe todo el ancho y largo de la pantalla,
+que tenga una transparencia, y centra el segundo div */
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.284);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/* estilo para el div donde esta el formulario, en principio fondo blanco
+y letras negras.*/
+.formModal {
+    background-color: white;
+    color: black;
+
+}
+
+.formModal form {
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+}
+
+.formModal form .itemForm {
+    padding: 5%;
+}
+/* - fin del modal del formulario crear juego */
+
+.videogame-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 1rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    justify-items: stretch;
+}
+
+.manga-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem;
+    padding: 1.5rem 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    .videogame-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .manga-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .anime-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .videogame-list {
+        grid-template-columns: 1fr;
+        padding: 1rem 0.5rem 1.5rem;
+    }
+
+    .manga-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .anime-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cardVideoGame {
+    background: linear-gradient(145deg, #0f1023 0%, #171837 100%);
+    border-radius: 16px;
+    padding: 1.25rem 1.25rem 1.4rem;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out,
+        border-color 0.25s ease-out, background 0.25s ease-out;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    overflow: hidden;
+}
+
+.cardVideoGame:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.7);
+    border-color: rgba(91, 141, 255, 0.6);
+}
+
+.cardVideoGame img {
+    width: 70%;
+    max-width: 190px;
+    align-self: center;
+    height: auto;
+    border-radius: var(--radius-md);
+    margin-top: 0.3rem;
+    margin-bottom: 0.75rem;
+    object-fit: cover;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
+    transition: transform var(--transition-med), box-shadow var(--transition-med);
+}
+
+.cardVideoGame:hover img {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.8);
+}
+
+.cardVideoGame h3,
+.cardVideoGame h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #f5f6ff;
+}
+
+.cardVideoGame p {
+    margin: 0.15rem 0;
+    font-size: 0.9rem;
+    color: #a5a7c7;
+}
+
+.manga-card {
+    background: linear-gradient(145deg, #0f1023 0%, #171837 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out,
+        border-color 0.25s ease-out;
+}
+
+.manga-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 79, 163, 0.7);
+}
+
+.manga-card__image-wrapper {
+    width: 100%;
+    padding: 1.25rem 1.25rem 0.75rem;
+    display: flex;
+    justify-content: center;
+}
+
+.manga-card__image {
+    width: 80%;
+    max-width: 220px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.8);
+}
+
+.manga-card__content {
+    padding: 0.75rem 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.manga-card__id {
+    font-size: 0.75rem;
+    color: #a5a7c7;
+}
+
+.manga-card__title {
+    margin: 0.1rem 0;
+    font-size: 1.1rem;
+}
+
+.manga-card__author {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #a5a7c7;
+}
+
+.manga-card__description {
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.manga-card__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.6rem;
+    font-size: 0.88rem;
+}
+
+.manga-card__price {
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(255, 79, 163, 0.12);
+    border: 1px solid rgba(255, 79, 163, 0.6);
+}
+
+.anime-card {
+    background: linear-gradient(145deg, #0f1023 0%, #171837 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease-out, box-shadow 0.25s ease-out,
+        border-color 0.25s ease-out;
+}
+
+.anime-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.7);
+    border-color: rgba(91, 141, 255, 0.7);
+}
+
+.anime-card__header {
+    padding: 0.9rem 1.25rem 0.5rem;
+}
+
+.anime-card__id {
+    font-size: 0.75rem;
+    color: #a5a7c7;
+    margin: 0;
+}
+
+.anime-card__title {
+    margin: 0.2rem 0 0.1rem;
+    font-size: 1.05rem;
+}
+
+.anime-card__player {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.anime-card__player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.anime-card__body {
+    padding: 0.75rem 1.25rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.anime-card__description {
+    font-size: 0.9rem;
+}
+
+.anime-card__genres,
+.anime-card__year {
+    font-size: 0.88rem;
+    color: #a5a7c7;
+}
+
+.anime-card__body .label {
+    font-weight: 600;
+    margin-right: 0.25rem;
+}
+
+.anime-actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.btn-secondary {
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: transparent;
+    color: #f5f6ff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: background-color 0.18s ease-out,
+        border-color 0.18s ease-out, transform 0.18s ease-out;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-1px);
+}
+
+.botonesVG {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 0 auto 2rem;
+    justify-content: center;
+}
+
+.botonesVG button {
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background: linear-gradient(135deg, #ff4fa3, #5b8dff);
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: transform 0.18s ease-out,
+        box-shadow 0.18s ease-out, filter 0.18s ease-out,
+        border-color 0.18s ease-out;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.botonesVG button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.75);
+}
+
+.botonesVG button:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+}
+
+.chat-page {
+    padding: 2rem;
+    padding-top: calc(2rem + 64px);
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.chat-layout {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.chat-container {
+    width: min(100%, 640px);
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(145deg, #0f1023 0%, #171837 100%);
+    border-radius: 16px;
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+}
+
+.chat-log {
+    background: radial-gradient(circle at top left, #26284f 0, #14152f 40%, #050715 100%);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    height: 360px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.msg {
+    max-width: 80%;
+    padding: 0.55rem 0.85rem;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    text-align: left;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.msg.user {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #5b8dff, #a97bff);
+    color: #ffffff;
+    border-bottom-right-radius: 4px;
+}
+
+.msg.sensei {
+    align-self: flex-start;
+    background: #1d1231;
+    color: #ffe5f4;
+    border-bottom-left-radius: 4px;
+    border: 1px solid rgba(255, 128, 192, 0.35);
+}
+
+.chat-form {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.chat-form input {
+    flex: 1;
+    padding: 0.7rem 0.9rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: rgba(2, 3, 11, 0.75);
+    color: #f5f6ff;
+    outline: none;
+    font-size: 0.9rem;
+    transition: border-color 0.18s ease-out,
+        box-shadow 0.18s ease-out, background-color 0.18s ease-out;
+}
+
+.chat-form input::placeholder {
+    color: #a5a7c7;
+}
+
+.chat-form input:focus {
+    border-color: #5b8dff;
+    box-shadow: 0 0 0 2px rgba(91, 141, 255, 0.35);
+    background-color: rgba(2, 3, 11, 0.95);
+}
+
+.chat-form button {
+    background: linear-gradient(135deg, #ff4fa3, #5b8dff);
+    border: none;
+    padding: 0.65rem 1.1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
+    transition: transform 0.18s ease-out,
+        box-shadow 0.18s ease-out, filter 0.18s ease-out;
+}
+
+.chat-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.85);
+    filter: brightness(1.05);
+}
+
+.chat-form button:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.8);
+}
+
+.chat-form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.avatar-container {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle at top, #2f1f4a 0, #0b0618 60%, #02030b 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.avatar-img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .chat-page {
+        padding: 1.5rem 1rem;
+        padding-top: calc(1.5rem + var(--nav-height));
+    }
+
+    .chat-layout {
+        gap: 1.5rem;
+    }
+
+    .chat-container {
+        padding: 1rem;
+    }
+
+    .chat-log {
+        height: 300px;
+    }
+
+    .avatar-container {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+.footer {
+    padding: 1.2rem 1.5rem 1.8rem;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    color: #a5a7c7;
+    font-size: 0.85rem;
+    background: radial-gradient(circle at top, #111326 0, #050715 60%);
+}
+
+.footer p {
+    margin: 0.15rem 0;
+}
+
+.footer .small {
+    font-size: 0.78rem;
+    opacity: 0.9;
+}
+
+
