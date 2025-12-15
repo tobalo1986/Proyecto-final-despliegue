@@ -220,7 +220,7 @@ api.post("/api/sensei", async (req, res) => {
         const userMessage = req.body.message;
 
         const response = await client.chat.completions.create({
-            model: "gpt-4o-mini",
+            model: "gpt-3.5-turbo",
             messages: [
                 { role: "system", content: systemPrompt },
                 { role: "user", content: userMessage }
