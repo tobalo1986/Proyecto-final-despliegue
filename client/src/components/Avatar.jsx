@@ -2,7 +2,7 @@ import neutral from "../assets/sensei-neutral.webp";
 import happy from "../assets/sensei-happy.webp";
 import angry from "../assets/sensei-angry.webp";
 import surprised from "../assets/sensei-surprised.webp";
-import thinking from "../assets/sensei-thinking.webp";
+import thinking from "../assets/sensei-thinking.webp"
 
 const images = {
     neutral,
